@@ -103,7 +103,7 @@ function getStats(txt) {
 			test.push(bun);		
 		}
 	}
-	test = test.sort(function (a,b) { return b.count-a.count;});
+	test = test.sort(function (a,b) { return b.count-a.count || a.localeCompare(b);});
 	test = test.splice(0,10); 
 	for(i=0; i<test.length; i++){
 		mostFrequentWords.push(test[i].original + "(" + test[i].count + ")");
