@@ -71,10 +71,9 @@ function getStats(txt) {
 		palindromes.toString();
 	}
 	
-	//longestWords - need to adjust
+	//longestWords
 	let longestWords = [];
 	let alphabetical = removeDuplicates(alphanumeric);
-	console.log(alphabetical);
 	alphabetical.sort(function(a, b){
 		return b.length - a.length || a.localeCompare(b);
 	});
@@ -82,7 +81,7 @@ function getStats(txt) {
 	
 	
 	
-	//mostFrequentWords - edit for words
+	//mostFrequentWords
 	let mostFrequentWords = [];
 	let copy = alphanumeric.slice(0);
 	let test = [];
@@ -103,7 +102,7 @@ function getStats(txt) {
 			test.push(bun);		
 		}
 	}
-	test = test.sort(function (a,b) { return b.count-a.count || a.localeCompare(b);});
+	test = test.sort(function (a,b) { return b.count-a.count});
 	test = test.splice(0,10); 
 	for(i=0; i<test.length; i++){
 		mostFrequentWords.push(test[i].original + "(" + test[i].count + ")");
